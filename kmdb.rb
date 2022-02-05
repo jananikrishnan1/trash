@@ -69,13 +69,40 @@
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
 # TODO!
+Movie.destroy_all
+Person.destroy_all
+Role.destroy_all
+
 
 # Generate models and tables, according to the domain model
 # TODO!
 
+puts Movie.all.count
+puts Person.all.count
+puts Role.all.count
+
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+values = { title: "Batman Begins", year: 2005, rating: "PG-13" }
+bb = Movie.new(values)
+bb.save
+
+puts Movie.all.count
+#values = { name: "Apple Inc.", url: "https://www.apple.com", city: "Cupertino", state: "CA" }
+#apple = Company.new(values)
+#apple.save
+
+#brian = Salesperson.where({last_name: "Eng", first_name: "Brian"})[0]
+#contact = Contact.where({first_name: "Tim", last_name: "Cook"})[0]
+#values = {
+#  salesperson_id: brian.id,
+#  contact_id: contact.id,
+#  note: "Grabbed tacos"
+#}
+#activity = Activity.new(values)
+#activity.save
 
 # Prints a header for the movies output
 puts "Movies"
